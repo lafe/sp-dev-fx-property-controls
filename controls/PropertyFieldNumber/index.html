@@ -32,7 +32,7 @@
     
     
       
-        <title>PropertyFieldTermPicker - SharePoint Framework Property Controls</title>
+        <title>PropertyFieldNumber - SharePoint Framework Property Controls</title>
       
     
     
@@ -94,7 +94,7 @@
                 SharePoint Framework Property Controls
               </span>
               <span class="md-header-nav__topic">
-                PropertyFieldTermPicker
+                PropertyFieldNumber
               </span>
             
           
@@ -363,6 +363,30 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../PropertyFieldTermPicker/" title="PropertyFieldTermPicker" class="md-nav__link">
+      PropertyFieldTermPicker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../PropertyFieldMultiSelect/" title="PropertyFieldMultiSelect" class="md-nav__link">
+      PropertyFieldMultiSelect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -374,11 +398,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        PropertyFieldTermPicker
+        PropertyFieldNumber
       </label>
     
-    <a href="./" title="PropertyFieldTermPicker" class="md-nav__link md-nav__link--active">
-      PropertyFieldTermPicker
+    <a href="./" title="PropertyFieldNumber" class="md-nav__link md-nav__link--active">
+      PropertyFieldNumber
     </a>
     
       
@@ -411,30 +435,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../PropertyFieldMultiSelect/" title="PropertyFieldMultiSelect" class="md-nav__link">
-      PropertyFieldMultiSelect
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../PropertyFieldNumber/" title="PropertyFieldNumber" class="md-nav__link">
-      PropertyFieldNumber
-    </a>
   </li>
 
         
@@ -683,40 +683,27 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/SharePoint/sp-dev-fx-property-controls/blob/master/docs/documentation/docs/controls/PropertyFieldTermPicker.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/SharePoint/sp-dev-fx-property-controls/blob/master/docs/documentation/docs/controls/PropertyFieldNumber.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="propertyfieldtermpicker-control">PropertyFieldTermPicker control<a class="headerlink" href="#propertyfieldtermpicker-control" title="Permanent link">&para;</a></h1>
-<p>This control generates a term picker that can be used in the property pane of your SharePoint Framework web parts.</p>
-<blockquote>
-<p><strong>Disclaimer</strong>: This control makes use of the <code>ProcessQuery</code> API end-points to retrieve the managed metadata information. This will get changed once the APIs for managing managed metadata will become available.</p>
-</blockquote>
-<p><strong>Empty term picker</strong></p>
-<p><img alt="Empty term picker" src="../../assets/termpicker-empty.png" /></p>
-<p><strong>Selecting terms</strong></p>
-<p><img alt="Selecting terms" src="../../assets/termpicker-group.png" /></p>
-<p><strong>Selected terms in the panel</strong></p>
-<p><img alt="Selected terms in the panel" src="../../assets/termpicker-selected.png" /></p>
-<p><strong>Empty term picker</strong></p>
-<p><img alt="Selected terms in the input" src="../../assets/termpicker-selected-terms.png" /></p>
-<p><strong>Limit the term set to a specific group or termset</strong></p>
-<p><img alt="Limit to a group or termset" src="../../assets/termpicker-limit-to-group.png" /></p>
+                <h1 id="propertyfieldnumber-control">PropertyFieldNumber control<a class="headerlink" href="#propertyfieldnumber-control" title="Permanent link">&para;</a></h1>
+<p>This control generates an input field for numbers. Text is not allowed as this will result into an invalid input.</p>
+<p><strong>PropertyFieldNumber example usage</strong></p>
+<p><img alt="PropertyFieldNumber example" src="../../assets/PropertyFieldNumber.gif" /></p>
 <h2 id="how-to-use-this-control-in-your-solutions">How to use this control in your solutions<a class="headerlink" href="#how-to-use-this-control-in-your-solutions" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Check that you installed the <code>@pnp/spfx-property-controls</code> dependency. Check out The <a href="../../#getting-started">getting started</a> page for more information about installing the dependency.</li>
 <li>Import the following modules to your component:</li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">PropertyFieldTermPicker</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@pnp/spfx-property-controls/lib/PropertyFieldTermPicker&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">PropertyFieldNumber</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@pnp/spfx-property-controls/lib/PropertyFieldNumber&#39;</span><span class="p">;</span>
 </pre></div>
 
 
 <ol>
 <li>Create a new property for your web part, for example:</li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">ICheckedTerms</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@pnp/spfx-property-controls/lib/PropertyFieldTermPicker&quot;</span><span class="p">;</span>
-
-<span class="kr">export</span> <span class="kr">interface</span> <span class="nx">IPropertyControlsTestWebPartProps</span> <span class="p">{</span>
-  <span class="nx">terms</span>: <span class="kt">ICheckedTerms</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">IPropertyControlsTestWebPartProps</span> <span class="p">{</span>
+  <span class="nx">numberValue</span>: <span class="kt">number</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -724,26 +711,20 @@
 <ol>
 <li>Add the custom property control to the <code>groupFields</code> of the web part property pane configuration:</li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="nx">PropertyFieldTermPicker</span><span class="p">(</span><span class="s1">&#39;terms&#39;</span><span class="p">,</span> <span class="p">{</span>
-  <span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;Select terms&#39;</span><span class="p">,</span>
-  <span class="nx">panelTitle</span><span class="o">:</span> <span class="s1">&#39;Select terms&#39;</span><span class="p">,</span>
-  <span class="nx">initialValues</span>: <span class="kt">this.properties.terms</span><span class="p">,</span>
-  <span class="nx">allowMultipleSelections</span>: <span class="kt">true</span><span class="p">,</span>
-  <span class="nx">excludeSystemGroup</span>: <span class="kt">false</span><span class="p">,</span>
-  <span class="nx">onPropertyChange</span>: <span class="kt">this.onPropertyPaneFieldChanged</span><span class="p">,</span>
-  <span class="nx">properties</span>: <span class="kt">this.properties</span><span class="p">,</span>
-  <span class="nx">context</span>: <span class="kt">this.context</span><span class="p">,</span>
-  <span class="nx">onGetErrorMessage</span>: <span class="kt">null</span><span class="p">,</span>
-  <span class="nx">deferredValidationTime</span>: <span class="kt">0</span><span class="p">,</span>
-  <span class="nx">limitByGroupNameOrID</span><span class="o">:</span> <span class="s1">&#39;People&#39;</span><span class="p">,</span>
-  <span class="nx">limitByTermsetNameOrID</span><span class="o">:</span> <span class="s1">&#39;Location&#39;</span><span class="p">,</span>
-  <span class="nx">key</span><span class="o">:</span> <span class="s1">&#39;termSetsPickerFieldId&#39;</span>
+<div class="codehilite"><pre><span></span><span class="nx">PropertyFieldNumber</span><span class="p">(</span><span class="s2">&quot;numberValue&quot;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">key</span><span class="o">:</span> <span class="s2">&quot;numberValue&quot;</span><span class="p">,</span>
+  <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Number value only&quot;</span><span class="p">,</span>
+  <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;Number field description&quot;</span><span class="p">,</span>
+  <span class="nx">value</span>: <span class="kt">this.properties.numberValue</span><span class="p">,</span>
+  <span class="nx">maxValue</span>: <span class="kt">10</span><span class="p">,</span>
+  <span class="nx">minValue</span>: <span class="kt">1</span><span class="p">,</span>
+  <span class="nx">disabled</span>: <span class="kt">false</span>
 <span class="p">})</span>
 </pre></div>
 
 
 <h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
-<p>The <code>PropertyFieldTermPicker</code> control can be configured with the following properties:</p>
+<p>The <code>PropertyFieldNumber</code> control can be configured with the following properties:</p>
 <table>
 <thead>
 <tr>
@@ -755,16 +736,46 @@
 </thead>
 <tbody>
 <tr>
+<td>key</td>
+<td>string</td>
+<td>yes</td>
+<td>An unique key that indicates the identity of this control.</td>
+</tr>
+<tr>
 <td>label</td>
 <td>string</td>
 <td>yes</td>
 <td>Property field label displayed on top.</td>
 </tr>
 <tr>
-<td>panelTitle</td>
+<td>description</td>
 <td>string</td>
-<td>yes</td>
-<td>TermSet Picker Panel title.</td>
+<td>no</td>
+<td>The number field input description.</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>string</td>
+<td>no</td>
+<td>Placeholder text to be displayed in the number field.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>no</td>
+<td>Value to be displayed in the number field.</td>
+</tr>
+<tr>
+<td>maxValue</td>
+<td>number</td>
+<td>no</td>
+<td>Maximum number that can be inserted.</td>
+</tr>
+<tr>
+<td>minValue</td>
+<td>number</td>
+<td>no</td>
+<td>Minimum number that can be inserted.</td>
 </tr>
 <tr>
 <td>disabled</td>
@@ -773,117 +784,20 @@
 <td>Specify if the control needs to be disabled.</td>
 </tr>
 <tr>
-<td>context</td>
-<td>WebPartContext</td>
-<td>yes</td>
-<td>Context of the current web part.</td>
-</tr>
-<tr>
-<td>initialValues</td>
-<td>ICheckedTerms</td>
-<td>no</td>
-<td>Defines the selected by default term sets.</td>
-</tr>
-<tr>
-<td>allowMultipleSelections</td>
-<td>boolean</td>
-<td>no</td>
-<td>Defines if the user can select only one or many term sets. Default value is false.</td>
-</tr>
-<tr>
-<td>excludeSystemGroup</td>
-<td>boolean</td>
-<td>no</td>
-<td>Indicator to define if the system Groups are exclude. Default is false.</td>
-</tr>
-<tr>
-<td>limitByGroupNameOrID</td>
+<td>errorMessage</td>
 <td>string</td>
 <td>no</td>
-<td>Limit the term sets that can be used by the group name or ID.</td>
-</tr>
-<tr>
-<td>limitByTermsetNameOrID</td>
-<td>string</td>
-<td>no</td>
-<td>Limit the terms that can be picked by the Term Set name or ID.</td>
-</tr>
-<tr>
-<td>hideTermStoreName</td>
-<td>boolean</td>
-<td>no</td>
-<td>Specifies if you want to show or hide the term store name from the panel.</td>
-</tr>
-<tr>
-<td>onPropertyChange</td>
-<td>function</td>
-<td>yes</td>
-<td>Defines a onPropertyChange function to raise when the date gets changed.</td>
-</tr>
-<tr>
-<td>properties</td>
-<td>any</td>
-<td>yes</td>
-<td>Parent web part properties, this object is use to update the property value.</td>
-</tr>
-<tr>
-<td>key</td>
-<td>string</td>
-<td>yes</td>
-<td>An unique key that indicates the identity of this control.</td>
-</tr>
-<tr>
-<td>onGetErrorMessage</td>
-<td>function</td>
-<td>no</td>
-<td>The method is used to get the validation error message and determine whether the input value is valid or not. See <a href="https://dev.office.com/sharepoint/docs/spfx/web-parts/guidance/validate-web-part-property-values">this documentation</a> to learn how to use it.</td>
+<td>If set, this will be displayed as an error message.</td>
 </tr>
 <tr>
 <td>deferredValidationTime</td>
 <td>number</td>
 <td>no</td>
-<td>Control will start to validate after users stop typing for <code>deferredValidationTime</code> milliseconds. Default value is 200.</td>
+<td>Number field will start to validate after users stop typing for <code>deferredValidationTime</code> milliseconds.</td>
 </tr>
 </tbody>
 </table>
-<p>Interface <code>ICheckedTerms</code></p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>string</td>
-<td>yes</td>
-<td>The ID of the term</td>
-</tr>
-<tr>
-<td>name</td>
-<td>string</td>
-<td>yes</td>
-<td>The name of the term</td>
-</tr>
-<tr>
-<td>path</td>
-<td>string</td>
-<td>yes</td>
-<td>The path of the term</td>
-</tr>
-<tr>
-<td>termSet</td>
-<td>string</td>
-<td>yes</td>
-<td>The parent term set of the term</td>
-</tr>
-</tbody>
-</table>
-<p><img alt="" src="https://telemetry.sharepointpnp.com/sp-dev-fx-property-controls/wiki/PropertyFieldTermPicker" /></p>
+<p><img alt="" src="https://telemetry.sharepointpnp.com/sp-dev-fx-property-controls/wiki/PropertyFieldNumber" /></p>
                 
                   
                 
@@ -902,7 +816,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../PropertyFieldSpinButton/" title="PropertyFieldSpinButton" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../PropertyFieldMultiSelect/" title="PropertyFieldMultiSelect" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -911,19 +825,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                PropertyFieldSpinButton
+                PropertyFieldMultiSelect
               </span>
             </div>
           </a>
         
         
-          <a href="../PropertyFieldMultiSelect/" title="PropertyFieldMultiSelect" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../PropertyFieldButtonWithCallout/" title="PropertyFieldButtonWithCallout" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                PropertyFieldMultiSelect
+                PropertyFieldButtonWithCallout
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
