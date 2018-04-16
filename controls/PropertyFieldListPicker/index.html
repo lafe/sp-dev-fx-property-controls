@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.0">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.2">
     
     
       
@@ -40,7 +40,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.78aab2dc.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
       
@@ -89,8 +89,8 @@
         
       </defs>
     </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
       <a href="#propertyfieldlistpicker-control" tabindex="1" class="md-skip">
@@ -822,6 +822,24 @@
 <td>Specify if you want to have a single or multi-list picker. By default this is set to <code>false</code> (single list picker).</td>
 </tr>
 <tr>
+<td>showSelectAll</td>
+<td>boolean</td>
+<td>no</td>
+<td>Specify if you want the Select All checkbox. By default this is set to <code>false</code> (mult-list picker only).</td>
+</tr>
+<tr>
+<td>selectAllInList</td>
+<td>boolean</td>
+<td>no</td>
+<td>Specify where to show the Select All checkbox. When false (default), checkbox is shown before the label, when true it is shown with the lists  (mult-list picker only).</td>
+</tr>
+<tr>
+<td>selectAllInListLabel</td>
+<td>string</td>
+<td>no</td>
+<td>The label to use for the in list select all checkbox (mult-list picker only).</td>
+</tr>
+<tr>
 <td>onPropertyChange</td>
 <td>function</td>
 <td>yes</td>
@@ -879,6 +897,8 @@
               
               
                 
+
+
               
             </article>
           </div>
@@ -954,7 +974,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.8eb9be28.js"></script>
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
       
       <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
       
