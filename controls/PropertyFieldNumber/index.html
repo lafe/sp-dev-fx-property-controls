@@ -212,7 +212,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../PropertyFieldColorPicker/" title="Controls" class="md-tabs__link md-tabs__link--active">
+        <a href="../PropertyFieldCollectionData/" title="Controls" class="md-tabs__link md-tabs__link--active">
           Controls
         </a>
       
@@ -332,6 +332,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../PropertyFieldCollectionData/" title="PropertyFieldCollectionData" class="md-nav__link">
+      PropertyFieldCollectionData
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../PropertyFieldColorPicker/" title="PropertyFieldColorPicker" class="md-nav__link">
       PropertyFieldColorPicker
     </a>
@@ -358,42 +370,6 @@
   <li class="md-nav__item">
     <a href="../PropertyFieldListPicker/" title="PropertyFieldListPicker" class="md-nav__link">
       PropertyFieldListPicker
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../PropertyFieldPeoplePicker/" title="PropertyFieldPeoplePicker" class="md-nav__link">
-      PropertyFieldPeoplePicker
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../PropertyFieldSpinButton/" title="PropertyFieldSpinButton" class="md-nav__link">
-      PropertyFieldSpinButton
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../PropertyFieldTermPicker/" title="PropertyFieldTermPicker" class="md-nav__link">
-      PropertyFieldTermPicker
     </a>
   </li>
 
@@ -464,6 +440,66 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../PropertyFieldOrder/" title="PropertyFieldOrder" class="md-nav__link">
+      PropertyFieldOrder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../PropertyFieldPeoplePicker/" title="PropertyFieldPeoplePicker" class="md-nav__link">
+      PropertyFieldPeoplePicker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../PropertyFieldSpinButton/" title="PropertyFieldSpinButton" class="md-nav__link">
+      PropertyFieldSpinButton
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../PropertyFieldSwatchColorPicker/" title="PropertyFieldSwatchColorPicker" class="md-nav__link">
+      PropertyFieldSwatchColorPicker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../PropertyFieldTermPicker/" title="PropertyFieldTermPicker" class="md-nav__link">
+      PropertyFieldTermPicker
+    </a>
   </li>
 
         
@@ -722,26 +758,26 @@
 <p><strong>PropertyFieldNumber example usage</strong></p>
 <p><img alt="PropertyFieldNumber example" src="../../assets/PropertyFieldNumber.gif" /></p>
 <h2 id="how-to-use-this-control-in-your-solutions">How to use this control in your solutions<a class="headerlink" href="#how-to-use-this-control-in-your-solutions" title="Permanent link">&para;</a></h2>
-<ol>
+<ul>
 <li>Check that you installed the <code>@pnp/spfx-property-controls</code> dependency. Check out The <a href="../../#getting-started">getting started</a> page for more information about installing the dependency.</li>
 <li>Import the following modules to your component:</li>
-</ol>
+</ul>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">PropertyFieldNumber</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@pnp/spfx-property-controls/lib/PropertyFieldNumber&#39;</span><span class="p">;</span>
 </pre></div>
 
 
-<ol>
+<ul>
 <li>Create a new property for your web part, for example:</li>
-</ol>
+</ul>
 <div class="codehilite"><pre><span></span><span class="kr">export</span> <span class="kr">interface</span> <span class="nx">IPropertyControlsTestWebPartProps</span> <span class="p">{</span>
   <span class="nx">numberValue</span>: <span class="kt">number</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
 
-<ol>
+<ul>
 <li>Add the custom property control to the <code>groupFields</code> of the web part property pane configuration:</li>
-</ol>
+</ul>
 <div class="codehilite"><pre><span></span><span class="nx">PropertyFieldNumber</span><span class="p">(</span><span class="s2">&quot;numberValue&quot;</span><span class="p">,</span> <span class="p">{</span>
   <span class="nx">key</span><span class="o">:</span> <span class="s2">&quot;numberValue&quot;</span><span class="p">,</span>
   <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Number value only&quot;</span><span class="p">,</span>
@@ -754,7 +790,9 @@
 </pre></div>
 
 
-<p>You can also implement your own validation with the <code>onGetErrorMessage</code> property as follows:</p>
+<ul>
+<li>You can also implement your own validation with the <code>onGetErrorMessage</code> property as follows:</li>
+</ul>
 <div class="codehilite"><pre><span></span><span class="nx">PropertyFieldNumber</span><span class="p">(</span><span class="s2">&quot;numberValue&quot;</span><span class="p">,</span> <span class="p">{</span>
   <span class="nx">key</span><span class="o">:</span> <span class="s2">&quot;numberValue&quot;</span><span class="p">,</span>
   <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Number value only&quot;</span><span class="p">,</span>
@@ -889,13 +927,13 @@
           </a>
         
         
-          <a href="../PropertyFieldButtonWithCallout/" title="PropertyFieldButtonWithCallout" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../PropertyFieldOrder/" title="PropertyFieldOrder" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                PropertyFieldButtonWithCallout
+                PropertyFieldOrder
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

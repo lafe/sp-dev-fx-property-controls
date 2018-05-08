@@ -212,7 +212,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" title="Controls" class="md-tabs__link md-tabs__link--active">
+        <a href="../PropertyFieldCollectionData/" title="Controls" class="md-tabs__link md-tabs__link--active">
           Controls
         </a>
       
@@ -330,6 +330,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../PropertyFieldCollectionData/" title="PropertyFieldCollectionData" class="md-nav__link">
+      PropertyFieldCollectionData
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -368,6 +380,13 @@
         <li class="md-nav__item">
   <a href="#implementation" title="Implementation" class="md-nav__link">
     Implementation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value" title="Value" class="md-nav__link">
+    Value
   </a>
   
 </li>
@@ -413,6 +432,42 @@
 
 
   <li class="md-nav__item">
+    <a href="../PropertyFieldMultiSelect/" title="PropertyFieldMultiSelect" class="md-nav__link">
+      PropertyFieldMultiSelect
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../PropertyFieldNumber/" title="PropertyFieldNumber" class="md-nav__link">
+      PropertyFieldNumber
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../PropertyFieldOrder/" title="PropertyFieldOrder" class="md-nav__link">
+      PropertyFieldOrder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../PropertyFieldPeoplePicker/" title="PropertyFieldPeoplePicker" class="md-nav__link">
       PropertyFieldPeoplePicker
     </a>
@@ -437,32 +492,20 @@
 
 
   <li class="md-nav__item">
+    <a href="../PropertyFieldSwatchColorPicker/" title="PropertyFieldSwatchColorPicker" class="md-nav__link">
+      PropertyFieldSwatchColorPicker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../PropertyFieldTermPicker/" title="PropertyFieldTermPicker" class="md-nav__link">
       PropertyFieldTermPicker
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../PropertyFieldMultiSelect/" title="PropertyFieldMultiSelect" class="md-nav__link">
-      PropertyFieldMultiSelect
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../PropertyFieldNumber/" title="PropertyFieldNumber" class="md-nav__link">
-      PropertyFieldNumber
     </a>
   </li>
 
@@ -698,6 +741,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#value" title="Value" class="md-nav__link">
+    Value
+  </a>
+  
+</li>
+      
       
       
       
@@ -784,9 +834,9 @@
 </tr>
 <tr>
 <td>selectedColor</td>
-<td>string</td>
+<td>string or IColor</td>
 <td>no</td>
-<td>The CSS-compatible string to describe the initial color</td>
+<td>The CSS-compatible string or an IColor object to describe the initial color</td>
 </tr>
 <tr>
 <td>alphaSliderHidden</td>
@@ -805,6 +855,12 @@
 <td>string</td>
 <td>no</td>
 <td>The name of the UI Fabric Font Icon to use for Inline display (defaults to Color)</td>
+</tr>
+<tr>
+<td>valueAsObject</td>
+<td>boolean</td>
+<td>no</td>
+<td>When true, the property is returned as an IColor object. When false (default), the property is returned as a CSS-compatible string</td>
 </tr>
 <tr>
 <td>properties</td>
@@ -845,6 +901,60 @@
 </tr>
 </tbody>
 </table>
+<h2 id="value">Value<a class="headerlink" href="#value" title="Permanent link">&para;</a></h2>
+<p>By default, the Color Picker returns the value as a CSS-compatible string. This allows you the flexibility of simply assigning the value to an inline style as is and this is usually sufficient. However, this also limits the information directly available to you since the format could be a Hex code, an RGBA value, or even a named color and may not be suitable for advanced scenarios.</p>
+<p>By setting the <code>valueAsObject</code> property to true, you will always receive a consistent IColor object that provides you detailed information about the chosen color. Here are the properties available in the IColor object:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>str</td>
+<td>string</td>
+<td>CSS-compatible string (this is the same value that would normally be returned when <code>valueAsObject</code> is false)</td>
+</tr>
+<tr>
+<td>hex</td>
+<td>string</td>
+<td>Hex value (does not reflect alpha)</td>
+</tr>
+<tr>
+<td>r</td>
+<td>number</td>
+<td>Red</td>
+</tr>
+<tr>
+<td>g</td>
+<td>number</td>
+<td>Green</td>
+</tr>
+<tr>
+<td>b</td>
+<td>number</td>
+<td>Blue</td>
+</tr>
+<tr>
+<td>h</td>
+<td>number</td>
+<td>Hue</td>
+</tr>
+<tr>
+<td>s</td>
+<td>number</td>
+<td>Saturation</td>
+</tr>
+<tr>
+<td>v</td>
+<td>number</td>
+<td>Value</td>
+</tr>
+</tbody>
+</table>
 <p><img alt="" src="https://telemetry.sharepointpnp.com/sp-dev-fx-property-controls/wiki/PropertyFieldColorPicker" /></p>
                 
                   
@@ -866,7 +976,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../PropertyFieldCollectionData/" title="PropertyFieldCollectionData" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -875,7 +985,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                PropertyFieldCollectionData
               </span>
             </div>
           </a>
