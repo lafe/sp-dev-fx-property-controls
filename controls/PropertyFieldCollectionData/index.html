@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
@@ -978,9 +978,9 @@
 </tr>
 <tr>
 <td>onGetErrorMessage</td>
-<td>(value: any): string | Promise<string></td>
+<td>(value: any, index: number, crntItem: any): string | Promise<string></td>
 <td>no</td>
-<td>The method is used to get the validation error message and determine whether the input value is valid or not.</td>
+<td>The method is used to get the validation error message and determine whether the input value is valid or not. It provides you the current row index and the item you are currently editing.</td>
 </tr>
 </tbody>
 </table>
@@ -1104,7 +1104,7 @@
     
       <script src="../../assets/javascripts/application.583bbe55.js"></script>
       
-      <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
     
